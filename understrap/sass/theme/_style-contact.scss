@@ -1,0 +1,699 @@
+@import "mixins";
+@import "theme_variables";
+
+.indent {
+  padding: 0;
+  margin: 0;
+}
+
+/*--------------------------------------------------------------------------------------------------------
+---------------------------------------------SLIDER---------------------------------------------------------
+----------------------------------------------------------------------------------------------------------*/
+.control-type {
+  width: 5%;
+  height: 10%;
+  opacity: 1;
+  background-color: $black;
+  position: absolute;
+  top: 40%;
+  overflow: hidden;
+  transition: all .3s linear;
+  &:hover {
+    background-color: $active;
+  }
+}
+.slider {
+  width: 100%;
+  background: url("../img/slider.png") no-repeat center / cover;
+  padding: 300px 0;
+  position: relative;
+}
+
+.directions {
+  background-color: $active;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  h3 {
+    font-size: $smaller;
+    color: $white;
+  }
+  h2 {
+    font: $normal Lato, sans-serif;
+    color: $white;
+  }
+  ul>li {
+    &:nth-child(odd) {
+      border-right: 0.5px solid darken($blue, 10%);
+    }
+  }
+  li {
+    color: $white;
+    border-bottom: 0.5px solid darken($blue, 10%);
+    background-color: $blue;
+    transition: all .3s linear;
+    &:hover {
+      background-color: darken($blue, 10%);
+    }
+    h3 {
+      font-size: $smaller;
+      color: $white;
+    }
+    a {
+      color: $white;
+    }
+    .industry-icon {
+      font-size: $normal;
+    }
+    .arrow-icon {
+      font-size: $smaller;
+      &:before {
+        padding: 5px;
+        border: 1px solid $white;
+        border-radius: 50%;
+      }
+    }
+    .view-btn {
+      @include btn;
+    }
+  }
+  .active-direction {
+    background-color: darken($blue, 10%);
+  }
+}
+/*--------------------------------------------------------------------------------------------------------
+---------------------------------------------ABOUT-US---------------------------------------------------------
+----------------------------------------------------------------------------------------------------------*/
+.about-us {
+  padding: 5% 0;
+  h3 {
+    font-size: $smaller;
+  }
+  h2 {
+    @include h2;
+  }
+  p {
+    @include text-p;
+  }
+  .read-btn {
+    @include btn;
+  }
+  .picture-block {
+    max-width: 300px;
+    position: relative;
+  }
+  .excellence {
+    max-width: 140px;
+    position: absolute;
+    top: 65%;
+    right: 25%;
+  }
+}
+/*--------------------------------------------------------------------------------------------------------
+---------------------------------------------OUR-STEPS--------------------------------------------------------
+----------------------------------------------------------------------------------------------------------*/
+.our-steps {
+  background-color: $grey;
+  padding: 100px 0;
+  .steps-img {
+    max-width: 60px;
+  }
+  h3 {
+    font-size: $smaller;
+  }
+  h2 {
+    @include h2;
+  }
+  h4 {
+    @include h4;
+  }
+  .steps-number {
+    font-size: $small;
+    font-weight: 700;
+    color: $green;
+  }
+  p {
+    @include text-p;
+  }
+}
+/*--------------------------------------------------------------------------------------------------------
+---------------------------------------------PROJECTS--------------------------------------------------------
+----------------------------------------------------------------------------------------------------------*/
+.projects {
+  padding: 100px 0;
+  h3 {
+    font-size: $smaller;
+  }
+  h2 {
+    @include h2;
+  }
+  h4 {
+    @include h4;
+  }
+  p {
+    @include text-p;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  .project-block {
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      border: 25px solid transparent;
+      border-bottom: 25px solid $blue;
+      border-left: 25px solid $blue;
+    }
+    .projects-btn {
+      font-size: $smaller;
+      color: $white;
+      background-color: transparent;
+      border: 2px solid $active;
+      border-radius: 25px;
+      padding: 10px 25px;
+      position: absolute;
+      top: 3%;
+      left: 3%;
+      transition: all .3s linear;
+      &:hover {
+        background-color: $active;
+        color: $white;
+      }
+    }
+    .forward {
+      color: $white;
+      position: absolute;
+      bottom: 5px;
+      left: 5px;
+      cursor: pointer;
+      transition: all .3s linear;
+      z-index: 1;
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+  .forward-layer {
+    background-color: $active;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: none;
+    animation: scale-up-bl 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    @keyframes scale-up-bl {
+      0% {
+        transform: scale(0.5);
+        transform-origin: 0 100%;
+      }
+      100% {
+        transform: scale(1);
+        transform-origin: 0 100%;
+      }
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border: 25px solid transparent;
+      border-bottom: 25px solid darken($active, 10%);
+      border-left: 25px solid darken($active, 10%);
+    }
+    .title-block {
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      transform: translate(50%, -50%);
+    }
+    h4 {
+      @include h4;
+      color: $white;
+      a {
+        color: $white;
+        transition: all .5s linear;
+        &:hover {
+          color: $black;
+        }
+      }
+    }
+    p {
+      @include text-p;
+      color: $white;
+    }
+  }
+  .full-projects-btn {
+    @include btn;
+    border-radius: 25px;
+    padding: 10px 25px;
+    margin-top: 45px;
+  }
+}
+/*--------------------------------------------------------------------------------------------------------
+---------------------------------------------HAPPY-CLIENTS-------------------------------------------------------
+----------------------------------------------------------------------------------------------------------*/
+.happy-clients {
+  background-color: $blue;
+  padding: 100px 0;
+  h3 {
+    font-size: $smaller;
+  }
+  h2 {
+    @include h2;
+  }
+  h4 {
+    @include h4;
+    a {
+      color: $white;
+      transition: all .5s linear;
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+  p {
+    @include text-p;
+  }
+  .message-text {
+    &:before, &:after {
+      content: "\7c";
+      font-family: untitled-font-1, sans-serif;
+      font-size: $big;
+      color: $white;
+      display: block;
+      padding-left: 5px;
+    }
+    &:before {
+      transform: rotate(180deg);
+    }
+    &:after {
+      transform: scale(1,-1);
+    }
+  }
+  h2, h3, h4, p {
+    color: $white;
+  }
+  img {
+    width: 30px;
+  }
+  .indicators {
+  color: $white;
+  }
+  .clients-comment {
+    display: none;
+    animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    @keyframes text-focus-in {
+      0% {
+        filter: blur(12px);
+        opacity: 0;
+      }
+      100% {
+        filter: blur(0px);
+        opacity: 1;
+      }
+    }
+  }
+  .item-clients {
+      cursor: pointer;
+      opacity: 0.5;
+  }
+}
+/*--------------------------------------------------------------------------------------------------------
+---------------------------------------------OUR-BLOG-------------------------------------------------------
+----------------------------------------------------------------------------------------------------------*/
+.our-blog {
+  background-color: $grey;
+  max-height: 745px;
+  overflow: hidden;
+  padding: 95px 0;
+  position: relative;
+  .blog-img {
+    display: block;
+    opacity: 0;
+    animation: scale-up-hor-right 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    @keyframes scale-up-hor-right {
+      0% {
+        transform: scaleX(0.4);
+        transform-origin: 100% 100%;
+      }
+      100% {
+        transform: scaleX(1);
+        transform-origin: 100% 100%;
+      }
+    }
+  }
+  .top-posts {
+    display: block;
+    animation: scale-up-hor-right 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    @keyframes scale-up-hor-right {
+      0% {
+        transform: scaleX(0.4);
+        transform-origin: 100% 100%;
+      }
+      100% {
+        transform: scaleX(1);
+        transform-origin: 100% 100%;
+      }
+    }
+    .btn {
+      display: none;
+    }
+  }
+  .all-posts {
+    display: none;
+    animation: scale-up-hor-left 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    @keyframes scale-up-hor-left {
+      0% {
+        transform: scaleX(0.4);
+        transform-origin: 0 0;
+      }
+      100% {
+        transform: scaleX(1);
+        transform-origin: 0 0;
+      }
+    }
+    .btn {
+      display: none;
+    }
+  }
+  h3 {
+    font-size: $smaller;
+  }
+  h2 {
+    @include h2;
+  }
+  h4 {
+    @include h4;
+    padding: 12px 0 25px 0;
+    a {
+      color: $black;
+      transition: all .5s linear;
+      &:hover {
+        color: $active;
+      }
+    }
+  }
+  p {
+    @include text-p;
+  }
+  .top-posts-btn,  .all-posts-btn {
+    font-size: $smaller;
+    color: $black;
+    background-color: transparent;
+    border: 2px solid $active;
+    border-radius: 25px;
+    outline: none;
+    transition: all .3s linear;
+    &:hover {
+      background-color: $active;
+      color: $white;
+    }
+  }
+  .top-posts-btn {
+    padding: 5px 10px;
+  }
+  .all-posts-btn {
+    padding: 5px 10px;
+  }
+  .active {
+    background-color: $active;
+    color: $white;
+    transition: all .3s linear;
+    outline: none;
+    &:hover {
+      background-color: darken($active, 20%);
+      color: $white;
+      border: 2px solid $white;
+    }
+  }
+  time {
+    font-family: Domine, sans-serif;
+    font-size: $small;
+    color: $time;
+    span {
+      color: $green;
+    }
+  }
+
+}
+/*--------------------------------------------------------------------------------------------------------
+---------------------------------------------CONTACT-US------------------------------------------------------
+----------------------------------------------------------------------------------------------------------*/
+.contact-us {
+  padding: 100px 0;
+  h3 {
+    font-size: $smaller;
+  }
+  h2 {
+    @include h2;
+  }
+  p {
+    font-family: Montserrat, sans-serif;
+    @include h4;
+  }
+  img {
+    max-width: 104px;
+    max-height: 44px;
+  }
+  .contact-block {
+    border: 1px solid $grey;
+    padding: 20px 16px;
+  }
+  a {
+    font-family: Domine, sans-serif;
+    font-size: $small;
+    color: $black;
+    transition: all .5s linear;
+    &:hover {
+      color: $active;
+    }
+  }
+}
+/*--------------------------------------------------------------------------------------------------------
+---------------------------------------------PAGES-AND-POSTS----------------------------------------------
+----------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------WP-STYLES---------------------------------------------------*/
+.btn-secondary {
+  display: none;
+}
+.page-title, .entry-title {
+  font-family: Montserrat, sans-serif;
+  font-size: $big;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $black;
+  padding: 25px 0;
+}
+.entry-title a {
+    color: $black;
+}
+.entry-date, .author a, .cat-links a, .comments-link a, .updated, .tags-links a, .edit-link a {
+  color: $orange;
+  transition: all .3s linear;
+  &:hover {
+    color: $black;
+  }
+}
+
+.pagination {
+  padding: 20px 0;
+  .active .page-link {
+    background-color: $green;
+    border-color: #dee2e6;
+  }
+}
+
+.entry-content ul {
+  padding: 30px 0;
+  font-size: $small;
+  color: $footer-text;
+  li {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    &:before {
+      content: "\2d";
+      font-family: untitled-font-1, sans-serif;
+      color: $orange;
+      padding-right: 20px;
+    }
+  }
+}
+.wp-block-media-text {
+  display: block;
+  figure {
+    padding: 15px 0;
+  }
+}
+.logged-in-as {
+  a {
+    font-size: $small;
+    text-transform: uppercase;
+    color: $orange;
+    transition: all .3s linear;
+    &:hover {
+      color: $black;
+    }
+  }
+}
+
+
+/*--------------------------------------------------------------------------------------------------------*/
+.pages-bg {
+  background: url("../img/image.png") no-repeat center / cover;
+  padding: 130px 0;
+  margin-bottom: 90px;
+  .page-title {
+    font-family: Lato, sans-serif;
+    letter-spacing: -0.9px;
+    position: relative;
+    display: block;
+    padding-left: 25px;
+    z-index: 2;
+    &:before {
+      content: '';
+      width: 54px;
+      height: 54px;
+      background-color: $orange;
+      border-radius: 50%;
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      z-index: -1;
+    }
+  }
+}
+.blog-title {
+  h3 {
+    font-size: $smaller;
+  }
+  h2 {
+    @include h2;
+  }
+  p {
+    @include text-p;
+  }
+}
+.post-navigation {
+  display: none;
+}
+.read-more-btn {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  a {
+    @include btn;
+  }
+}
+.blog-section, .blog-item {
+  .img-title {
+    position: relative;
+
+    img.wp-post-image {
+      width: 100%;
+    }
+.post-title-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+    .post-title {
+      font-size: $smaller2;
+      font-weight: 700;
+      color: $white;
+      background-color: $black;
+      padding: 5px;
+      a {
+        color: $white;
+        transition: all .3s linear;
+        &:hover {
+          color: $orange;
+        }
+      }
+    }
+    .post-date {
+      font-family: Montserrat, sans-serif;
+      font-size: $smaller2;
+      color: $white;
+      background-color: $orange;
+      padding: 5px;
+    }
+  }
+}
+
+.blog-item {
+  border-bottom: 1px solid $line;
+  margin-bottom: 45px;
+
+.icon-facebook, .icon-twitter-1 {
+  &:before {
+    font-size: $normal;
+    color: $placeholder;
+    background-color: transparent;
+    padding: 10px;
+    border: 1px solid $placeholder;
+    border-radius: 50%;
+  }
+}
+  .icon-facebook {
+    &:hover {
+      &:before {
+        color: $white;
+        background-color: $facebook;
+        border: 1px solid $facebook;
+
+      }
+    }
+  }
+  .icon-twitter-1 {
+    &:hover {
+      &:before {
+        color: $white;
+        background-color: $twitter;
+        border: 1px solid $twitter;
+      }
+    }
+  }
+  .social-links {
+
+  }
+  .share-btn {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    .icon-share-outline {
+      &:before {
+        font-size: $normal;
+        color: $placeholder;
+        background-color: transparent;
+        padding: 10px;
+        border: 1px solid $placeholder;
+        border-radius: 50%;
+      }
+
+      &:hover {
+        &:before {
+          color: $white;
+          background-color: $orange;
+          border: 1px solid $orange;
+        }
+      }
+      &:active {
+        &:before {
+          color: $white;
+          background-color: $orange;
+          border: 1px solid $orange;
+        }
+      }
+    }
+  }
+}
+

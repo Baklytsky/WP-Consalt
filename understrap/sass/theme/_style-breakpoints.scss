@@ -1,0 +1,248 @@
+@import "mixins";
+@import "theme_variables";
+@media (min-width: 576px) {
+  .control-type {
+    width: 3%;
+    height: 15%;
+  }
+  .slider {
+    padding: 30% 0;
+  }
+  .directions {
+    width: 300px;
+    right: auto;
+    left: auto;
+  }
+  .happy-clients {
+    .message-text {
+      &:before, &:after {
+        font-size: $bigger;
+        padding-left: 15px;
+      }
+    }
+  }
+  .footer {
+    p {
+      padding: 0 120px 35px 0;
+    }
+    .email-form {
+      font-family: Montserrat, sans-serif;
+      font-size: $small;
+      padding: 20px 0 20px 35px;
+      border-radius: 40px;
+    }
+    .form-btn {
+      font-family: Montserrat, sans-serif;
+      font-size: $small;
+      padding: 20px 35px;
+      border-radius: 40px;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .contact-line {
+    .vertical-line {
+      border-right: 1px solid $address;
+      padding: 15px 0;
+    }
+    span {
+      font-size: $smaller;
+    }
+  }
+  #header {
+    ul {
+      li {
+        padding: 35px 15px;
+        a {
+          font-size: $smaller;
+        }
+      }
+    }
+  }
+  .slider {
+    padding: 20% 0;
+  }
+  .happy-clients {
+    img {
+      width: 68px;
+    }
+  }
+  .our-blog {
+    .all-posts {
+      list-style-position: inside;
+      column-count: 2;
+    }
+    .blog-img {
+      opacity: 1;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      bottom: 0;
+      right: 0;
+    }
+  }
+  .footer {
+    .tnp-widget-minimal input.tnp-email, .tnp-widget-minimal input.tnp-submit  {
+      font-size: $small;
+      padding: 15px 20px;
+      border-radius: 30px;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .about-us {
+    .picture-block {
+      max-width: 400px;
+    }
+    .excellence {
+      max-width: 200px;
+    }
+  }
+  .contact-us {
+    .contact-block {
+      padding: 40px 32px;
+    }
+  }
+  .our-blog {
+    .top-posts-btn {
+      font-size: $small;
+      padding: 10px 35px;
+    }
+    .all-posts-btn {
+      font-size: $small;
+      padding: 10px 25px;
+    }
+  }
+  .wp-block-media-text {
+    display: grid;
+  }
+}
+
+@media (min-width: 1200px) {
+  .our-blog, .happy-clients, .our-steps, .about-us, .our-blog, .contact-us, .blog-title, .footer {
+    h3 {
+      font-size: $small;
+    }
+    h2 {
+      font-size: $bigger;
+    }
+    h4 {
+      font-size: $normal;
+    }
+    p {
+      font-size: $small2;
+      line-height: 25px;
+    }
+  }
+  .contact-line {
+    span {
+      font-size: $small;
+    }
+    a {
+      font-size: $small;
+    }
+  }
+  #header {
+    ul {
+      li {
+        a {
+          font-size: $small;
+        }
+      }
+    }
+  }
+  .directions {
+    width: 30%;
+    h3 {
+      font-size: $small;
+    }
+    h2 {
+      font-size: $big;
+    }
+    li {
+      h3 {
+        font-size: $small;
+      }
+      .industry-icon {
+        font-size: $big;
+      }
+      .view-btn {
+        font-size: $small;
+        border-radius: 32px;
+        padding: 15px 25px;
+      }
+    }
+  }
+  .about-us {
+    .read-btn {
+      font-size: $small;
+      border-radius: 20px;
+      padding: 10px 20px;
+    }
+    .picture-block {
+      max-width: 460px;
+    }
+    .excellence {
+      max-width: 240px;
+    }
+  }
+  .our-steps {
+    .steps-number {
+      font-size: $normal;
+    }
+  }
+  .projects {
+    .project-block {
+      .projects-btn {
+        font-size: $small;
+      }
+    }
+    .full-projects-btn {
+      font-size: $small;
+    }
+  }
+  .happy-clients {
+    .message-text {
+      &:before, &:after {
+        font-size: $extra-big;
+        padding-left: 50px;
+      }
+    }
+  }
+  .contact-us {
+    a {
+      font-size: $normal;
+    }
+  }
+  .read-more-btn {
+    a {
+      font-size: $small;
+      border-radius: 20px;
+      padding: 10px 20px;
+    }
+  }
+  .footer {
+    h2 {
+      font-size: $normal-plus;
+    }
+  }
+  .blog-section, .blog-item {
+    .img-title {
+      .post-title {
+        font-size: $normal;
+        padding: 15px;
+      }
+
+      .post-date {
+        font-size: $small;
+        padding: 10px;
+      }
+    }
+  }
+}
+@media (min-width: 1400px) {
+  .directions {
+    width: 23%;
+  }
+}

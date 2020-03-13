@@ -1,0 +1,66 @@
+
+@import "mixins";
+@import "theme_variables";
+
+/*--------------------------------------------------------------------------------------------------------
+---------------------------------------------FOOTER------------------------------------------------------
+----------------------------------------------------------------------------------------------------------*/
+.footer {
+  background-color: $footer-bg;
+  padding-top: 100px;
+  .footer-line {
+    padding-bottom: 95px;
+    border-bottom: 1px solid $line;
+  }
+  h3 {
+    font-size: $smaller;
+  }
+  h2 {
+    @include h2;
+    padding-bottom: 35px;
+  }
+  p {
+    @include text-p;
+    color: $footer-text;
+    padding-bottom: 35px;
+  }
+  h2, h3, {
+    color: $white;
+  }
+  ul>li {
+    padding-bottom: 10px;
+  }
+  a {
+    font-size: $small;
+    color: $placeholder;
+    transition: all .5s linear;
+    &:hover {
+      color: $active;
+    }
+  }
+  .tnp-form {
+    position: relative;
+    padding-bottom: 35px;
+  }
+  .tnp-widget-minimal input.tnp-email {
+    width: 100%;
+    font-size: $smaller2;
+    text-transform: uppercase;
+    color: $placeholder;
+    background-color: $input-bg;
+    padding: 10px 0 10px 10px;
+    border: 1px solid $input-bg;
+    border-radius: 20px;
+  }
+  .tnp-widget-minimal input.tnp-submit {
+    @include btn;
+    width: 30%;
+    font-size: $smaller2;
+    text-transform: uppercase;
+    padding: 10px 8px;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}

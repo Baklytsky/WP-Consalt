@@ -1,0 +1,56 @@
+@import "mixins";
+@import "theme_variables";
+
+.indent {
+  padding: 0;
+  margin: 0;
+}
+/*--------------------------------------------------------------------------------------------------------
+---------------------------------------------Email&Phone---------------------------------------------------------
+----------------------------------------------------------------------------------------------------------*/
+.contact-line {
+  width: 100%;
+  background-color: $contact-line;
+  .vertical-line {
+    border-bottom: 1px solid $address;
+  }
+  span {
+    font-size: $smaller2;
+    letter-spacing: 0.6px;
+    color: $mail-phone;
+  }
+  a {
+    font-size: $smaller2;
+    letter-spacing: 0.6px;
+    color: $address;
+    transition: all .3s linear;
+    &:hover {
+      color: $active;
+    }
+  }
+}
+/*--------------------------------------------------------------------------------------------------------
+---------------------------------------------HEADER---------------------------------------------------------
+----------------------------------------------------------------------------------------------------------*/
+#header {
+  .icon-hamburger {
+    color: $black;
+  }
+  ul {
+    li {
+      padding: 12px 0;
+      a {
+        font-size: $smaller2;
+        font-weight: 700;
+        color: $nav;
+        transition: all .3s linear;
+        &:hover {
+          color: $active;
+        }
+      }
+    }
+    .current-menu-item a {
+      color: $active;
+    }
+  }
+}

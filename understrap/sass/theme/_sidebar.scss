@@ -1,0 +1,133 @@
+@import "mixins";
+@import "theme_variables";
+
+.indent {
+  padding: 0;
+  margin: 0;
+}
+aside {
+  padding-bottom: 60px;
+}
+.search-form {
+  border: 1px solid $line;
+  .search-place {
+    width: 100%;
+    font-family: Domine, sans-serif;
+    font-size: $normal;
+    color: $black;
+    padding: 15px 0 15px 20px;
+    border: none;
+  }
+  .search-btn {
+    border: none;
+    background-color: transparent;
+    padding: 0 20px;
+    &:before {
+      content: "\57";
+      font-family: untitled-font-1, sans-serif;
+      font-size: $normal;
+      color: $placeholder;
+    }
+  }
+}
+
+.widget_categories ul li {
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+  &:before {
+    content: "\5c";
+    font-family: untitled-font-1, sans-serif;
+    color: $orange;
+    padding-right: 20px;
+  }
+  a {
+    font-size: $small;
+    color: $footer-text;
+    transition: all .3s linear;
+    &:hover {
+      color: $orange;
+    }
+  }
+}
+
+.widget_tag_cloud {
+  a {
+    font-size: $small !important;
+    text-transform: uppercase;
+    @include btn;
+    margin: 5px;
+    display: inline-block;
+  }
+}
+
+.widget_tag_cloud, .widget_categories, .rpwwt-widget {
+  .widget-title {
+    font-size: $normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $black;
+    padding: 25px 0;
+  }
+}
+
+.widget_newsletterwidget {
+  text-align: center;
+  border: 1px solid $line;
+  margin: 0 auto;
+  padding: 40px 20px;
+  .widget-title {
+    font-size: $small;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $black;
+    padding-top: 25px;
+  }
+  p {
+    font-family: Montserrat, sans-serif;
+    font-size: $normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $black;
+    padding-bottom: 25px;
+  }
+  .tnp-field-email {
+    width: 100%;
+    label {
+      display: none;
+    }
+  }
+  .tnp-widget input.tnp-submit {
+    @include btn;
+    font-family: Montserrat, sans-serif;
+    font-size: $small;
+    text-transform: uppercase;
+  }
+}
+.rpwwt-widget {
+  a {
+    color: $black;
+    transition: all .3s linear;
+    img {
+      max-width: 100% !important;
+    }
+    .rpwwt-post-title {
+      font-family: Montserrat, sans-serif;
+      font-size: $small;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    &:hover {
+      color: $orange;
+    }
+  }
+  .rpwwt-post-date {
+    font-family: Montserrat, sans-serif;
+    font-size: $small;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $orange;
+  }
+}
+
+

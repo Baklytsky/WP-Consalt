@@ -1,0 +1,38 @@
+/*----------------------------------------------------------------------------------//
+//------------------------------RESET DEFAULT STYLES--------------------------------//
+//----------------------------------------------------------------------------------*/
+
+@font-face {
+  font-family: "Montserrat";
+  src: url('../fonts/Montserrat-Regular.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Domine";
+  src: url('../fonts/Domine-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lato";
+  src: url('../fonts/Lato-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+html,body                       { width:100%; height:100%; }
+body                            { padding:0; margin:0; font:16px Montserrat, Arial, Calibri, arial, Tahoma, sans-serif;  color: #5E5E5E;}
+div,p,a,span,em,strong,img,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,td,tr,form,fieldset,label,select,input,textarea {
+  padding:0;
+  margin:0;
+  outline:none;
+  list-style:none;
+}
+p                              { font: 16px Domine, Arial, Calibri, arial, Tahoma, sans-serif; line-height: 1.5; color: #838B8C;}
+select, input, textarea        { font: 20px Domine, Arial, Calibri, arial, Tahoma, sans-serif; vertical-align:middle;}
+textarea                       { vertical-align:top; }
+:focus                         { outline:none; }
+input[type=submit]             { cursor:pointer; }
+img, fieldset                  { border:0; }
+table                          { border-collapse:collapse; border-spacing:0; }
+a:link, a:visited              { text-decoration:none;}
