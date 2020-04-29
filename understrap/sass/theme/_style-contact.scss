@@ -108,7 +108,8 @@
     max-width: 140px;
     position: absolute;
     top: 65%;
-    right: 25%;
+    right: 50%;
+    transform: translateX(50%);
   }
 }
 /*--------------------------------------------------------------------------------------------------------
@@ -303,7 +304,11 @@
     width: 30px;
   }
   .indicators {
-  color: $white;
+    color: $white;
+    cursor: pointer;
+  }
+  .indicators-active {
+    color: $green;
   }
   .clients-comment {
     display: none;
@@ -319,9 +324,15 @@
       }
     }
   }
+  .clients-comment-active {
+    display: block;
+  }
   .item-clients {
       cursor: pointer;
       opacity: 0.5;
+  }
+  .item-clients-active {
+    opacity: 1;
   }
 }
 /*--------------------------------------------------------------------------------------------------------
@@ -663,8 +674,41 @@
     }
   }
   .social-links {
-
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(0, -100%);
+    transition: all .3s linear;
+    animation: scale-out-hor-right 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    @keyframes scale-out-hor-right {
+      0% {
+        transform: scaleX(1);
+        transform-origin: 100% 100%;
+        opacity: 1;
+      }
+      100% {
+        transform: scaleX(0);
+        transform-origin: 100% 100%;
+        opacity: 1;
+      }
+    }
   }
+  .social-links-active {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0, 100%);
+    animation: scale-up-hor-right 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    @keyframes scale-up-hor-right {
+      0% {
+        transform: scaleX(0.4);
+        transform-origin: 100% 100%;
+      }
+      100% {
+        transform: scaleX(1);
+        transform-origin: 100% 100%;
+      }
+    }
+  }
+
   .share-btn {
     border: none;
     background-color: transparent;

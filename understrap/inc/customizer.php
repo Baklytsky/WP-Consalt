@@ -179,6 +179,53 @@ if ( ! function_exists( 'understrap_theme_customize_register' ) ) {
 				)
 			);
 		}
+		$wp_customize->add_section(
+			'understrap_contacts_container',
+			array(
+				'title'       => __( 'Contacts', 'understrap' ),
+				'description' => __( 'Add custom CSS here' ),
+				'panel' => '',
+				'priority'    => 160,
+				'capability'  => 'edit_theme_options',
+				'theme_supports' => '',
+			)
+		);
+		$wp_customize->add_setting(
+			'understrap_contacts_settings[headline]',
+			array(
+				'default'           => '',
+				'sanitize_callback' => 'esc_html',
+				'transport'        => 'refresh',
+			)
+		);
+		$wp_customize->add_control( 'understrap_contacts_control[headline]',
+			array(
+				'label'             => __('Headline', 'understrap'),
+				'settings'          => 'understrap_contacts_settings[headline]',
+				'section'           => 'understrap_contacts_container',
+				'type'              => 'text',
+			)
+		);
+		$contacts_info = array('Phone', 'Email');
+
+		foreach ($contacts_info as $item) {
+			$wp_customize->add_setting(
+				'understrap_contacts_settings[link]['.$item.']',
+				array(
+					'default'           => '',
+					'sanitize_callback' => 'esc_html',
+					'transport'        => 'refresh',
+				)
+			);
+			$wp_customize->add_control( 'understrap_contacts_control[link]['.$item.']',
+				array(
+					'label'             => $item,
+					'settings'          => 'understrap_contacts_settings[link]['.$item.']',
+					'section'           => 'understrap_contacts_container',
+					'type'              => 'text',
+				)
+			);
+		}
 	}
 } // endif function_exists( 'understrap_theme_customize_register' ).
 add_action( 'customize_register', 'understrap_theme_customize_register' );

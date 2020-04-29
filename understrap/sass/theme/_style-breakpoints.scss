@@ -40,16 +40,20 @@
   }
 }
 @media (min-width: 768px) {
-  .contact-line {
-    .vertical-line {
-      border-right: 1px solid $address;
-      padding: 15px 0;
-    }
-    span {
-      font-size: $smaller;
-    }
-  }
   #header {
+    .contact-line {
+      .contacts li {
+        padding: 15px;
+        a, span {
+          font-size: $small;
+        }
+      }
+      .vertical-line {
+        border-right: 1px solid $address;
+        border-bottom: none;
+        padding: 15px 0;
+      }
+    }
     ul {
       li {
         padding: 35px 15px;

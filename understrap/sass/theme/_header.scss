@@ -8,31 +8,35 @@
 /*--------------------------------------------------------------------------------------------------------
 ---------------------------------------------Email&Phone---------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------*/
-.contact-line {
-  width: 100%;
-  background-color: $contact-line;
-  .vertical-line {
-    border-bottom: 1px solid $address;
-  }
-  span {
-    font-size: $smaller2;
-    letter-spacing: 0.6px;
-    color: $mail-phone;
-  }
-  a {
-    font-size: $smaller2;
-    letter-spacing: 0.6px;
-    color: $address;
-    transition: all .3s linear;
-    &:hover {
-      color: $active;
-    }
-  }
-}
+
 /*--------------------------------------------------------------------------------------------------------
 ---------------------------------------------HEADER---------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------*/
 #header {
+  .contact-line {
+    width: 100%;
+    background-color: $contact-line;
+    .contacts li {
+      padding: 10px;
+    }
+    .vertical-line {
+      border-bottom: 1px solid $address;
+    }
+    span {
+      font-size: $smaller2;
+      letter-spacing: 0.6px;
+      color: $mail-phone;
+    }
+    a {
+      font-size: $smaller2;
+      letter-spacing: 0.6px;
+      color: $address;
+      transition: all .3s linear;
+      &:hover {
+        color: $active;
+      }
+    }
+  }
   .icon-hamburger {
     color: $black;
   }

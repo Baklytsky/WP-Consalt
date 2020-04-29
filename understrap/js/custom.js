@@ -1,6 +1,7 @@
 'use strict';
 let forward = document.querySelectorAll('.forward'),
     forwardLayer = document.querySelectorAll('.forward-layer'),
+    happyClients = document.querySelectorAll('.happy-clients'),
     itemClients = document.querySelectorAll('.item-clients'),
     clientsComment = document.querySelectorAll('.clients-comment'),
     indicators = document.querySelectorAll('.indicators'),
@@ -14,7 +15,6 @@ let forward = document.querySelectorAll('.forward'),
     shareLinks = document.querySelectorAll('.social-links'),
     block;
 
-    startPage();
 
 if (forward) {
     for (let i = 0; i < forward.length; i++) {
@@ -24,6 +24,7 @@ if (forward) {
             reset();
         })
     }
+
     function reset() {
         for (let i = 0; i < forwardLayer.length; i++) {
             forwardLayer[i].addEventListener('mouseleave', function () {
@@ -33,23 +34,13 @@ if (forward) {
     }
 }
 
-// if (shareIcon) {
-//     for (let i = 0; i < shareIcon.length; i++) {
-//         shareIcon[i].addEventListener('click', function () {
-//             shareLinks[i].style.display = 'block';
-//             resetIcons();
-//             console.log(i);
-//         })
-//
-//     }
-//     function resetIcons() {
-//         for (let i = 0; i < shareIcon.length; i++) {
-//             shareIcon[i].addEventListener('click', function () {
-//                 shareLinks[i].style.display = 'none';
-//             })
-//         }
-//     }
-// }
+if (shareIcon) {
+    for (let i = 0; i < shareIcon.length; i++) {
+        shareIcon[i].addEventListener('click', () => {
+            shareLinks[i].classList.toggle('social-links-active')
+        });
+    }
+}
 
 
 if (allPostsBtn) {
@@ -73,50 +64,79 @@ if (allPostsBtn) {
 }
 
 
-function startPage() {
-    if (clientsComment) {
-        clientsComment[0].style.display = 'block';
-        itemClients[0].style.opacity = '1';
-        indicators[0].style.color = '#16D428';
+// if (happyClients) {
+//     for (let i = 0; i < itemClients.length; i++) {
+//
+//         itemClients[0].classList.add('item-clients-active');
+//         indicators[0].classList.add('indicators-active');
+//         clientsComment[0].classList.add('clients-comment-active');
+//
+//         itemClients[i].addEventListener('click', function () {
+//
+//             itemClients[i].classList.add('item-clients-active');
+//             indicators[i].classList.add('indicators-active');
+//             clientsComment[i].classList.add('clients-comment-active');
+//         });
+//     }
+// }
+
+if (happyClients) {
+
+    for (let i = 0; i < itemClients.length; i++) {
+
+        itemClients[0].classList.add('item-clients-active');
+        indicators[0].classList.add('indicators-active');
+        clientsComment[0].classList.add('clients-comment-active');
+
+
+        if (itemClients) {
+            indicators[0].addEventListener('click', clientOne);
+            itemClients[0].addEventListener('click', clientOne);
+
+            function clientOne() {
+                clientsComment[0].classList.add('clients-comment-active');
+                itemClients[0].classList.add('item-clients-active');
+                indicators[0].classList.add('indicators-active');
+                clientsComment[1].classList.remove('clients-comment-active');
+                itemClients[1].classList.remove('item-clients-active');
+                indicators[1].classList.remove('indicators-active');
+                clientsComment[2].classList.remove('clients-comment-active');
+                itemClients[2].classList.remove('item-clients-active');
+                indicators[2].classList.remove('indicators-active');
+            }
+
+            indicators[1].addEventListener('click', clientTwo);
+            itemClients[1].addEventListener('click', clientTwo);
+
+            function clientTwo() {
+                clientsComment[1].classList.add('clients-comment-active');
+                itemClients[1].classList.add('item-clients-active');
+                indicators[1].classList.add('indicators-active');
+                clientsComment[0].classList.remove('clients-comment-active');
+                itemClients[0].classList.remove('item-clients-active');
+                indicators[0].classList.remove('indicators-active');
+                clientsComment[2].classList.remove('clients-comment-active');
+                itemClients[2].classList.remove('item-clients-active');
+                indicators[2].classList.remove('indicators-active');
+            }
+
+            indicators[2].addEventListener('click', clientsThree);
+            itemClients[2].addEventListener('click', clientsThree);
+
+            function clientsThree() {
+                clientsComment[2].classList.add('clients-comment-active');
+                itemClients[2].classList.add('item-clients-active');
+                indicators[2].classList.add('indicators-active');
+                clientsComment[0].classList.remove('clients-comment-active');
+                itemClients[0].classList.remove('item-clients-active');
+                indicators[0].classList.remove('indicators-active');
+                clientsComment[1].classList.remove('clients-comment-active');
+                itemClients[1].classList.remove('item-clients-active');
+                indicators[1].classList.remove('indicators-active');
+            }
+        }
     }
 }
-
-if (itemClients) {
-    itemClients[0].addEventListener('click', function () {
-        clientsComment[0].style.display = 'block';
-        itemClients[0].style.opacity = '1';
-        indicators[0].style.color = '#16D428';
-        clientsComment[1].style.display = 'none';
-        itemClients[1].style.opacity = '0.5';
-        indicators[1].style.color = '#FFF';
-        clientsComment[2].style.display = 'none';
-        itemClients[2].style.opacity = '0.5';
-        indicators[2].style.color = '#FFF';
-    });
-    itemClients[1].addEventListener('click', function () {
-        clientsComment[1].style.display = 'block';
-        itemClients[1].style.opacity = '1';
-        indicators[1].style.color = '#16D428';
-        clientsComment[0].style.display = 'none';
-        itemClients[0].style.opacity = '0.5';
-        indicators[0].style.color = '#FFF';
-        clientsComment[2].style.display = 'none';
-        itemClients[2].style.opacity = '0.5';
-        indicators[2].style.color = '#FFF';
-    });
-    itemClients[2].addEventListener('click', function () {
-        clientsComment[2].style.display = 'block';
-        itemClients[2].style.opacity = '1';
-        indicators[2].style.color = '#16D428';
-        clientsComment[0].style.display = 'none';
-        itemClients[0].style.opacity = '0.5';
-        indicators[0].style.color = '#FFF';
-        clientsComment[1].style.display = 'none';
-        itemClients[1].style.opacity = '0.5';
-        indicators[1].style.color = '#FFF';
-    });
-}
-
 
 
 

@@ -17,35 +17,46 @@ $container = get_theme_mod( 'understrap_container_type' );
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <?php do_action( 'wp_body_open' ); ?>
-<h class="site" id="page">
-    <section class="container-fluid contact-line">
-        <div class="container">
-            <ul class="text-center d-md-flex justify-content-md-end align-items-center">
-                <li class="vertical-line pr-md-3">
-                    <span class="text-uppercase">Email :</span>
-                    <a href="mailto:info@consultplus.com" class="mail-link">info@consultplus.com</a>
-                </li>
-                <li class="pb-1 pl-md-3">
-                    <span class="text-uppercase">Phone :</span>
-                    <a href="tel:+9156856664555" class="footer-text">+91 5685 6664 555</a>
-                </li>
-            </ul>
-        </div>
-    </section>
+<div class="site" id="page">
 
 	<!-- ******************* The Navbar Area ******************* -->
-    <header id="header" class="container-fluid">
+    <header id="header" class="container-fluid indent">
+        <div class="contact-line">
+            <div class="container">
+			    <?php $contacts = get_theme_mod( 'understrap_contacts_settings' );
+			    if ( ! empty( $contacts['link'] ) ): ?>
+                    <ul class="d-md-flex justify-content-md-end align-items-center text-center contacts">
+					    <?php if ( ! empty( $contacts['link']['Email'] ) ): ?>
+                            <li class="vertical-line">
+                                <span class="text-uppercase">Email :</span>
+                                <a href="mailto:<?= $contacts['link']['Email'] ?>" class="mail-link" aria-label="Email">
+								    <?= $contacts['link']['Email'] ?>
+                                </a>
+                            </li>
+					    <?php endif;
+					    if ( ! empty( $contacts['link']['Phone'] ) ): ?>
+                            <li class="">
+                                <span class="text-uppercase">Phone :</span>
+                                <a href="tel:<?= $contacts['link']['Phone'] ?>" class="footer-text"
+                                   aria-label="Phone number">
+								    <?= $contacts['link']['Phone'] ?>
+                                </a>
+                            </li>
+					    <?php endif; ?>
+                    </ul>
+			    <?php endif; ?>
+            </div>
+        </div>
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-dark indent">
 
 					<!-- Your site title as branding in the menu -->
-	            <?php if (is_front_page() && is_home()) : ?>
+	            <?php if (is_front_page() || is_home()) : ?>
                     <h1>
 			            <?php my_logo(); ?>
                     </h1>
